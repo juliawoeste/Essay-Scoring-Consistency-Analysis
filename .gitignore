@@ -1,0 +1,24 @@
+# Ignore raw data (too large / can be re-downloaded)
+data/raw/
+
+# Keep processed data (you WANT this)
+# (so do NOT ignore data/processed)
+
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Mac system files
+.DS_Store
+
+# VS Code settings (optional)
+.vscode/
+
+# Logs
+*.log
