@@ -1,0 +1,20 @@
+# Sentence count 
+df['sentence_count'] = df['full_text'].apply(lambda x: len([s for s in x.split('.') if s.strip() != '']))
+
+# Avoid division by zero
+df['sentence_count'] = df['sentence_count'].replace(0, 1)
+
+# Average sentence length
+df['avg_sentence_length'] = df['word_count'] / df['sentence_count']
+
+# Character count
+df['char_count'] = df['clean_text'].apply(len)
+
+# Unique word count
+df['unique_words'] = df['clean_text'].apply(lambda x: len(set(x.split())))
+
+# Word diversity (unique / total words)
+df['word_diversity'] = df['unique_words'] / df['word_count']
+
+# Preview
+df[['word_count', 'sentence_count', 'avg_sentence_length', 'char_count', 'word_diversity']].head()
